@@ -8,68 +8,68 @@ To study and implement DDL commands and different types of constraints.
 ### 1. CREATE
 Used to create a new relation (table).
 
-**Syntax:**
-```sql
+*Syntax:*
+sql
 CREATE TABLE (
   field_1 data_type(size),
   field_2 data_type(size),
   ...
 );
-```
+
 ### 2. ALTER
 Used to add, modify, drop, or rename fields in an existing relation.
 (a) ADD
-```sql
+sql
 ALTER TABLE std ADD (Address CHAR(10));
-```
+
 (b) MODIFY
-```sql
+sql
 ALTER TABLE relation_name MODIFY (field_1 new_data_type(size));
-```
+
 (c) DROP
-```sql
+sql
 ALTER TABLE relation_name DROP COLUMN field_name;
-```
+
 (d) RENAME
-```sql
+sql
 ALTER TABLE relation_name RENAME COLUMN old_field_name TO new_field_name;
-```
+
 ### 3. DROP TABLE
 Used to permanently delete the structure and data of a table.
-```sql
+sql
 DROP TABLE relation_name;
-```
+
 ### 4. RENAME
 Used to rename an existing database object.
-```sql
+sql
 RENAME TABLE old_relation_name TO new_relation_name;
-```
+
 ### CONSTRAINTS
 Constraints are used to specify rules for the data in a table. If there is any violation between the constraint and the data action, the action is aborted by the constraint. It can be specified when the table is created (using CREATE TABLE) or after it is created (using ALTER TABLE).
 ### 1. NOT NULL
 When a column is defined as NOT NULL, it becomes mandatory to enter a value in that column.
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   column_name data_type(size) NOT NULL
 );
-```
+
 ### 2. UNIQUE
 Ensures that values in a column are unique.
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   column_name data_type(size) UNIQUE
 );
-```
+
 ### 3. CHECK
 Specifies a condition that each row must satisfy.
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   column_name data_type(size) CHECK (logical_expression)
 );
-```
+
 ### 4. PRIMARY KEY
 Used to uniquely identify each record in a table.
 Properties:
@@ -77,152 +77,216 @@ Must contain unique values.
 Cannot be null.
 Should contain minimal fields.
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   column_name data_type(size) PRIMARY KEY
 );
-```
+
 ### 5. FOREIGN KEY
 Used to reference the primary key of another table.
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   column_name data_type(size),
   FOREIGN KEY (column_name) REFERENCES other_table(column)
 );
-```
+
 ### 6. DEFAULT
 Used to insert a default value into a column if no value is specified.
 
 Syntax:
-```sql
+sql
 CREATE TABLE Table_Name (
   col_name1 data_type,
   col_name2 data_type,
   col_name3 data_type DEFAULT 'default_value'
 );
-```
 
-**Question 1**
+*Question 1*
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/66163850-1dfd-490e-ab70-714d31038dab)
 
-```sql
--- Paste your SQL code below for Question 1
-```
 
-**Output:**
+sql
+CREATE TABLE products(
+product_id INTEGER PRIMARY KEY,
+product_name TEXT NOT NULL,
+list_price DECIMAL(10,2) NOT NULL check(list_price>=discount and list_price>=0),
+discount DECIMAL(10,2) default 0 NOT NULL check(discount>=0)
+);
 
-![Output1](output.png)
 
-**Question 2**
+*Output:*
+
+![image](https://github.com/user-attachments/assets/c843e10b-ef45-417e-83fb-58be29f4da55)
+
+
+*Question 2*
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/be02b6d8-a4c8-4e2f-a5b8-fbab9132c04d)
 
-```sql
--- Paste your SQL code below for Question 2
-```
 
-**Output:**
+sql
+INSERT INTO Products(ProductID,Name,CategorY,Price,Stock)
+VALUES(101,"Laptop","Electronics",1500,50);
 
-![Output2](output.png)
 
-**Question 3**
+*Output:*
+
+![image](https://github.com/user-attachments/assets/30acff29-1563-42f2-982e-e90aa291eddf)
+
+
+*Question 3*
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/425b3d39-d66e-4618-9c22-9773dd4b6e72)
 
-```sql
--- Paste your SQL code below for Question 3
-```
 
-**Output:**
+sql
+select * from Archived_students
+UNION ALL
+select * from Student_details 
 
-![Output3](output.png)
 
-**Question 4**
+*Output:*
+
+![image](https://github.com/user-attachments/assets/601e5e3e-7f03-4d74-86f8-a1e011ff6d12)
+
+
+*Question 4*
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/747e11fe-7cb1-4b3f-b9cd-28be76802894)
 
-```sql
--- Paste your SQL code below for Question 4
-```
 
-**Output:**
+sql
+ALTER TABLE Student_details 
+ADD COLUMN "MobileNumber" NUMBER;
 
-![Output4](output.png)
+ALTER TABLE Student_details 
+ADD COLUMN "Address" VARCHAR(100);
 
-**Question 5**
+
+*Output:*
+
+![image](https://github.com/user-attachments/assets/b6f271e4-c343-487c-bcb5-6271ec3adcbf)
+
+
+*Question 5*
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/c766706c-1512-4302-a6f7-7af9ba34b2ca)
 
-```sql
--- Paste your SQL code below for Question 5
-```
 
-**Output:**
+sql
+ALTER TABLE customer
+ADD COLUMN "discount" DECIMAL(5,2);
 
-![Output5](output.png)
 
-**Question 6**
+*Output:*
+
+![image](https://github.com/user-attachments/assets/7b6f2041-2f44-466b-97c9-b616362085ea)
+
+
+*Question 6*
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/e55da1b2-0761-4941-8928-885f2f77c46e)
 
-```sql
--- Paste your SQL code below for Question 6
-```
 
-**Output:**
+sql
+CREATE TABLE item(
+item_id TEXT PRIMARY KEY,
+item_desc TEXT NOT NULL,
+rate  INTEGER NOT NULL,
+icom_id TEXT(4),
+FOREIGN KEY (icom_id) references company(com_id)
+ON UPDATE CASCADE
+ON DELETE CASCADE
 
-![Output6](output.png)
 
-**Question 7**
+);
+
+
+*Output:*
+
+![image](https://github.com/user-attachments/assets/fbd203fd-772b-4575-9749-79563558d14c)
+
+
+*Question 7*
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/e070a37e-e77b-4aa6-aa35-a06f4e5a3240)
 
-```sql
--- Paste your SQL code below for Question 7
-```
 
-**Output:**
+sql
+CREATE TABLE Shipments(
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+foreign key(SupplierID) references Suppliers(SupplierID),
+foreign key(OrderID) references Orders(OrderID)
 
-![Output7](output.png)
+);
 
-**Question 8**
+
+*Output:*
+
+![image](https://github.com/user-attachments/assets/12f1be83-964a-4323-8a6e-8dad3dbb65b8)
+
+
+*Question 8*
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/b817bd9e-b967-45bc-ab20-8a65bf2efa3f)
 
-```sql
--- Paste your SQL code below for Question 8
-```
 
-**Output:**
+sql
+CREATE TABLE jobs(
+job_id INTEGER PRIMARY KEY,
+job_title TEXT DEFAULT '',
+min_salary INTEGER DEFAULT 8000,
+max_salary INTEGER DEFAULT NULL
 
-![Output8](output.png)
 
-**Question 9**
+);
+
+
+*Output:*
+
+![image](https://github.com/user-attachments/assets/497282ed-b6ef-4570-b93d-01d6297d2419)
+
+
+*Question 9*
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/e15ff118-f046-4fe5-8f01-6a92613e24e6)
 
-```sql
--- Paste your SQL code below for Question 9
-```
 
-**Output:**
+sql
+CREATE TABLE Events(
+EventID INTEGER,
+EventName TEXT,
+EventDate DATE
 
-![Output9](output.png)
 
-**Question 10**
+); 
+
+
+*Output:*
+
+![image](https://github.com/user-attachments/assets/680c6ec5-f2a3-4a07-996f-7073370a0d48)
+
+
+*Question 10*
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/2a734cc4-f361-460d-8efb-31d4ac5a8a82)
 
-```sql
--- Paste your SQL code below for Question 10
-```
 
-**Output:**
+sql
+INSERT INTO Customers(ID,NAME,AGE,ADDRESS,SALARY)
+VALUES(1,"Ramesh",32,"Ahmedabad",2000),
+(2,"Khilan",25,"Delhi",1500),
+(3,"Kaushik",23,"Kota",2000);
 
-![Output10](output.png)
 
+*Output:*
+
+![image](https://github.com/user-attachments/assets/6c2cdcb8-6c4a-43da-b6a8-e8bcc4d6f925)
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
