@@ -3,14 +3,13 @@
 ## AIM
 To understand and implement procedures and functions in PL/SQL for performing various operations such as calculations, decision-making, and looping.
 
----
-
 ## THEORY
 
 PL/SQL (Procedural Language/SQL) extends SQL by adding procedural constructs like variables, conditions, loops, procedures, and functions. Procedures and functions are subprograms that help modularize the code and improve reusability.
 
 ### *Procedure*
 A PL/SQL *procedure* is a subprogram that performs a specific action. It does not return a value directly but can return values using OUT parameters.
+
 ```
 *Syntax:*
 sql
@@ -85,7 +84,6 @@ END;
 *Expected Output:*  
 Square of 6 is 36
 
----
 
 ## 2. Write a PL/SQL Function to Return the Factorial of a Number
 
@@ -95,6 +93,7 @@ Square of 6 is 36
 - Use a loop to calculate the factorial.
 - Return the result using the RETURN statement.
 - Call the function using a SELECT statement or in an anonymous block.
+  
 ```
 *Program:*
 sql
@@ -201,15 +200,16 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Reversed number of 1234 is ' || rev_result);
 END;
 /
-```
+
 
 
 *Output:*
 
 ![image](https://github.com/user-attachments/assets/89d0ded7-a2f9-467c-b0ef-f20971a33d79)
-```
+
 *Expected Output:*  
 Reversed number of 1234 is 4321
+
 ```
 ---
 
@@ -255,5 +255,6 @@ Multiplication table of 5:
 ...  
 5 x 10 = 50
 
+```
 ## RESULT
 Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
