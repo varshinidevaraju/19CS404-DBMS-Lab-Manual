@@ -239,7 +239,7 @@ BEGIN
     print_table(5);
 END;
 /
-```
+
 
 
 *Output:*
@@ -254,6 +254,6 @@ Multiplication table of 5:
 5 x 3 = 15  
 ...  
 5 x 10 = 50
-```
+
 ## RESULT
 Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
