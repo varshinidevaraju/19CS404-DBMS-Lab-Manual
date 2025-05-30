@@ -2,7 +2,10 @@
 
 ## AIM
 To study and implement aggregate functions, GROUP BY, and HAVING clause with suitable examples.
-
+```
+NAME:VARSHINI D
+REG NO:212223230234
+```
 ## THEORY
 
 ### Aggregate Functions
