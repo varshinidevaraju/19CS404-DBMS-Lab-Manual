@@ -3,6 +3,11 @@
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
 
+```
+NAME:VARSHINI D
+REG NO:212223230234
+```
+
 ## THEORY
 
 ### 1. INSERT INTO
