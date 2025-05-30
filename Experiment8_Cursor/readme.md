@@ -1,10 +1,16 @@
 # Experiment 8: PL/SQL Cursor Programs
 
+```
+NAME:VARSHINI D
+REG NO:212223230234
+
+```
+
 ## AIM
 To write and execute PL/SQL programs using cursors and exception handling to manage runtime errors effectively and display appropriate messages.
 
 ## THEORY
-
+```
 In PL/SQL, cursors are used to handle query result sets row-by-row. 
 
 There are two types of cursors:
@@ -23,6 +29,7 @@ Types of Explicit Cursors:
 4. %ROWTYPE Cursor: Fetches entire row into a record using %ROWTYPE.
 
 5. Cursor with FOR UPDATE: Used for row-level locking and updating the rows while looping.
+```
 ```
 *Syntax:*
 sql
