@@ -2,7 +2,11 @@
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
+```
+NAME:VARSHINI D
+REG NO:212223230234
 
+```
 ## THEORY
 ```
 ### 1. CREATE
