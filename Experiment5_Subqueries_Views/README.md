@@ -2,6 +2,10 @@
 
 ## AIM 
 To study and implement subqueries and views.
+```
+NAME:VARSHINI D
+REG NO:212223230234
+```
 
 ## THEORY
 
